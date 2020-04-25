@@ -19,6 +19,26 @@ public class PlayerControls : MonoBehaviour
     public int currentHealth;
     public PlayerHealth healthBar;
 
+    static private PlayerControls instance = null;
+
+    // Lets other scripts find the instance of the PlayerControls script
+    public static PlayerControls Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    // Ensure there is only one instance of this object in the game
+    void Awake()
+    {
+        if (instance != null)
+            Destroy(gameObject);
+
+        instance = this;
+    }
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -37,9 +57,13 @@ public class PlayerControls : MonoBehaviour
             Shoot();
         }
 
+        // Load gameover screen when player health reaches zero
+        if (currentHealth == 0)
+        {
+            GameManager.Instance.GameOver();
 
+        }
     }
-
 
     //checks to see if collision has happend with the player 
     void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +79,6 @@ public class PlayerControls : MonoBehaviour
         Rigidbody2D rb = FireBallRight.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * FireBallForce, ForceMode2D.Impulse);
     }
-
 
     void FixedUpdate()
     {

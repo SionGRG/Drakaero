@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97cb286abd2f334697bba71ce4b317b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velX: 7
+  velX: 8
   enemyHitDamage: {fileID: 9075516170031416273, guid: 6aa7261747f516e4faecbc0b210ba4b4,
     type: 3}
   ignoreList:

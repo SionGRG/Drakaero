@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Start.unity
+    guid: 5d8dacae19fb77c42a62aa4fba95493d
+  - enabled: 1
+    path: Assets/Scenes/Drakaero.unity
+    guid: 63823f6946cd8cd4d8e45aa4e52fea14
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 819a30c7cbb810d48a8a2ba8ea50f4a2
   m_configObjects: {}
